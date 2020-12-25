@@ -1,6 +1,7 @@
 package model;
 
-public class Login {
+//
+public class LoginResp {
     boolean loginSuccess =false;
     String id;
     String password;

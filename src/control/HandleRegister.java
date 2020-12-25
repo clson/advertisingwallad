@@ -11,23 +11,25 @@ import java.sql.SQLException;
 public class HandleRegister {
     public boolean handleRegister(Register register){
         JdbcTemplate jdbcTemplate=new JdbcTemplate(ConnectDatabase.getDataSource());
+        boolean isSuccess=false;
         try {
             if (ConnectDatabase.getConnection()==null)
                 return false;
+            String sqlStr="insert into register_table values(?,?)";
+            int count=0;
+//        String pw = Encrypt.encrypt(register.getPassword(), "mimajiami");
+            //使用md5加密简单加密
+            String pw = DigestUtils.md5DigestAsHex(register.getPassword().getBytes());
+            if (StringUtils.isNotBlank(register.getId())&&StringUtils.isNotBlank(register.getPassword())){
+                count=jdbcTemplate.update(sqlStr,register.getId(),pw);
+            }
+
+            if (count>=1){
+                isSuccess=true;
+            }
+            ConnectDatabase.getConnection().close();
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-        boolean isSuccess=false;
-        String sqlStr="insert into register_table values(?,?)";
-        int count=0;
-//        String pw = Encrypt.encrypt(register.getPassword(), "mimajiami");
-        //使用md5加密简单加密
-        String pw = DigestUtils.md5DigestAsHex(register.getPassword().getBytes());
-        if (StringUtils.isNotBlank(register.getId())&&StringUtils.isNotBlank(register.getPassword())){
-            count=jdbcTemplate.update(sqlStr,register.getId(),pw);
-        }
-        if (count>=1){
-            isSuccess=true;
         }
         return isSuccess;
     }

@@ -1,7 +1,7 @@
 package control;
 
 import model.Advertisement;
-import model.Login;
+import model.LoginResp;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
@@ -16,15 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QueryAllUserAD {
-    Login login;
-    public void setLogin(Login login){
-        this.login=login;
+    LoginResp loginResp;
+    public void setLoginResp(LoginResp loginResp){
+        this.loginResp = loginResp;
     }
     List<Advertisement> adList=new ArrayList();
     public List<Advertisement> queryAllUser() {
         JdbcTemplate jdbcTemplate = new JdbcTemplate(ConnectDatabase.getDataSource());
         try {
-            if (ConnectDatabase.getConnection()==null || login==null)
+            if (ConnectDatabase.getConnection()==null || loginResp ==null)
                 return null;
             String sqlStr="select * from guanggao_table";
            adList=(List)jdbcTemplate.query(sqlStr, new ResultSetExtractor() {
@@ -50,9 +50,12 @@ public class QueryAllUserAD {
                         advertisement.setSerialNumber(resultSet.getString(4));
                         arrayList.add(advertisement);
                     }
+
                     return arrayList;
+
                 }
             });
+            ConnectDatabase.getConnection().close();
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -14,6 +14,16 @@ public class Advertisement {
         return ID;
     }
 
+    public Advertisement() {
+    }
+
+    public Advertisement(String ID, String content, File pictureFile, Image image, String serialNumber) {
+        this.ID = ID;
+        this.content = content;
+        this.pictureFile = pictureFile;
+        this.image = image;
+        this.serialNumber = serialNumber;
+    }
 
     public void setID(String ID) {
         this.ID = ID;
