@@ -21,8 +21,9 @@ public class HandleLogin {
                jdbcTemplate.queryForObject(sqlStr, new BeanPropertyRowMapper<>(LoginResp.class), loginResp.getId(), pw);
                loginResp.setLoginSuccess(true);
                ConnectDatabase.getConnection().close();
-           } catch (SQLException e) {
+           } catch (Exception e) {
                e.printStackTrace();
+               loginResp.setLoginSuccess(false);
            }
            return loginResp;
        }

@@ -10,7 +10,7 @@ import java.io.File;
 public class loginTest {
     public static void main(String[] args) {
         LoginResp loginResp = new LoginResp();
-        loginResp.setId("陈林");
+        loginResp.setId("王五");
         loginResp.setPassword("123456");
         HandleLogin hanleLogin = new HandleLogin();
         loginResp = hanleLogin.handleLogin(loginResp);
@@ -21,10 +21,10 @@ public class loginTest {
         AddAdvertisement add=new AddAdvertisement();
         add.setLoginResp(loginResp);
         Advertisement ad=new Advertisement();
-        ad.setContent("鸡你太美");
+        ad.setContent("天墉城");
         File file = new File("src/2.jpg");
         ad.setPictureFile(file);
-        ad.setSerialNumber("AR009");
+        ad.setSerialNumber("AR008");
         boolean b = add.addAdvertisement(ad);
         System.out.println(b);
     }

@@ -35,7 +35,7 @@ public class RegisterView extends JPanel implements ActionListener {
         String pwStr = new String(pw).trim();
         if(id.length() == 0 ||pwStr.length()==0 ){
             JOptionPane.showMessageDialog
-                    (null,"注册失败","消息对话框", JOptionPane.WARNING_MESSAGE);
+                    (null,"注册失败,ID或密码不能为空","消息对话框", JOptionPane.WARNING_MESSAGE);
             return;
         }
         String pw_againStr = new String(pw_again).trim();

@@ -1,6 +1,6 @@
 package model;
 
-//
+//登录响应类
 public class LoginResp {
     boolean loginSuccess =false;
     String id;
