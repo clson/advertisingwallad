@@ -10,6 +10,9 @@ public class DelAdvertisement {
     public void setLoginResp(LoginResp loginResp){
         this.loginResp = loginResp;
     }
+
+
+
     public boolean delAdvertisement(String serialNumber){
         JdbcTemplate jdbcTemplate = new JdbcTemplate(ConnectDatabase.getDataSource());
         boolean success=false;
