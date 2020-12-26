@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class QueryOneUserAD {
+public class QueryoneUserAd {
     LoginResp loginResp;
     public void setLoginResp(LoginResp loginResp){
         this.loginResp = loginResp;

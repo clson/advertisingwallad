@@ -1,6 +1,6 @@
 package userView;
 
-import control.QueryOneUserAD;
+import control.QueryoneUserAd;
 import model.Advertisement;
 import model.AdvertisingBoard;
 
@@ -11,9 +11,9 @@ import java.util.List;
 
 public class HandleQueryOneUserAD implements ActionListener {
     QueryOneUserADView view ;
-    QueryOneUserAD query;
+    QueryoneUserAd query;
     public HandleQueryOneUserAD(){
-        query = new QueryOneUserAD();
+        query = new QueryoneUserAd();
     }
     public void actionPerformed(ActionEvent e) {
         query.setLoginResp(view.loginResp);

@@ -1,7 +1,7 @@
 package Test;
 
 import control.HandleLogin;
-import control.QueryOneUserAD;
+import control.QueryoneUserAd;
 import model.Advertisement;
 import model.LoginResp;
 import userView.AdvertisingBoardView;
@@ -21,7 +21,7 @@ public class ShowImage extends JFrame {
         LoginResp loginResp = new LoginResp();
         loginResp.setId("小陈");
         loginResp.setPassword("123456");
-        QueryOneUserAD queryoneUserAd = new QueryOneUserAD();
+        QueryoneUserAd queryoneUserAd = new QueryoneUserAd();
         LoginResp loginResp1 = new HandleLogin().handleLogin(loginResp);
         queryoneUserAd.setLoginResp(loginResp1);
         List<Advertisement> advertisements = queryoneUserAd.queryOneUser(loginResp.getId());
