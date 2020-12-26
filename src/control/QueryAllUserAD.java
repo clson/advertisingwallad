@@ -36,11 +36,10 @@ public class QueryAllUserAD {
                         advertisement.setID(resultSet.getString(1));
                         advertisement.setContent(resultSet.getString(2));
                         InputStream in = resultSet.getBinaryStream("imageFile");
-                        int length = 0;
                         try {
-                            length = in.available();
+                            int length = in.available();
                             byte[] b = new byte[length];
-                            in.read();
+                            in.read(b);
                             in.close();
                             Image image = Toolkit.getDefaultToolkit().createImage(b);
                             advertisement.setImage(image);

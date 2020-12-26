@@ -45,7 +45,6 @@ public class HandleAdvertisingBoard  implements ActionListener {
             view.showNumber.setText(advertisement.getSerialNumber());
             view.showContent.setText(advertisement.getContent());
             view.showImage.setImage(advertisement.getImage());
-            System.out.println(advertisement.getImage());
             view.showImage.repaint();
         }
     }
