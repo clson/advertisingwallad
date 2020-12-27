@@ -9,6 +9,7 @@ public class UpdateContentView extends JPanel {
     public LoginResp loginResp;
     public JTextField inputSerialNumber;
     public JTextArea inputWord;
+    public JButton inputPictureFile;
     public JButton submit;
     public JTextField hintMess;
     HandleUpdateContent handleUpdateContent;
@@ -20,6 +21,7 @@ public class UpdateContentView extends JPanel {
     private void registerListener() {
         handleUpdateContent=new HandleUpdateContent();
         handleUpdateContent.setView(this);
+        inputPictureFile.addActionListener(handleUpdateContent);
         submit.addActionListener(handleUpdateContent);
     }
 
@@ -34,10 +36,12 @@ public class UpdateContentView extends JPanel {
         inputWord.setLineWrap(true);
         inputWord.setWrapStyleWord(true);
         inputWord.setFont(new Font("宋体",Font.BOLD,20));
-        submit = new JButton("修改");
+        inputPictureFile = new JButton("请选择广告图像文件");
+        submit = new JButton("修改广告");
         pNorth.add(new JLabel("输入广告序列号"));
         pNorth.add(inputSerialNumber);
         pNorth.add(new JLabel("在文本区输入广告词"));
+        pSouth.add(inputPictureFile);
         pSouth.add(submit);
         pSouth.add(hintMess);
         add(pNorth,BorderLayout.NORTH);

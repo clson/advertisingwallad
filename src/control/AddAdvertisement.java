@@ -28,8 +28,7 @@ public class AddAdvertisement {
                 return false;
             FileInputStream fileInputStream = new FileInputStream(ad.getPictureFile());
             int length = fileInputStream.available();
-//            int count = jdbcTemplate.update(sqlStr, loginResp.getId(),ad.getContent(), fileInputStream, length, loginResp.getId()+ad.getSerialNumber());
-            int count = jdbcTemplate.update(sqlStr, new PreparedStatementSetter() {
+             int count = jdbcTemplate.update(sqlStr, new PreparedStatementSetter() {
                 @Override
                 public void setValues(PreparedStatement preparedStatement) throws SQLException {
                     preparedStatement.setString(1, loginResp.getId());

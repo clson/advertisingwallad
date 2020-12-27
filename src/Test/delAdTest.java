@@ -1,13 +1,15 @@
 package Test;
 
 import control.HandleLogin;
-import control.UpdateContent;
+import control.UpdateAdvertisement;
 import model.LoginResp;
+
+import java.io.File;
 
 public class delAdTest {
     public static void main(String[] args) {
         LoginResp loginResp = new LoginResp();
-        loginResp.setId("王林");
+        loginResp.setId("小陈");
         loginResp.setPassword("123456");
         new HandleLogin().handleLogin(loginResp);
 //        DelAdvertisement delAdvertisement = new DelAdvertisement();
@@ -22,9 +24,10 @@ public class delAdTest {
 //        }else {
 //            System.out.println("修改失败");
 //        }
-        UpdateContent updateContent = new UpdateContent();
-        updateContent.setLoginResp(loginResp);
-        boolean b = updateContent.updateContent("李白", "A006");
+        UpdateAdvertisement updateAdvertisement = new UpdateAdvertisement();
+        updateAdvertisement.setLoginResp(loginResp);
+        File file = new File("src/2.jpg");
+        boolean b = updateAdvertisement.updateAd("", file,"A001");
         if (b){
             System.out.println("修改成功");
         }else {

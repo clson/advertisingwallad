@@ -12,6 +12,7 @@ public class HandleAddAdvertisement implements ActionListener {
     AddAdvertisementView view ;
     AddAdvertisement addAdvertisement;
     Advertisement ad;
+    File file;
     public HandleAddAdvertisement(){
         addAdvertisement = new AddAdvertisement();
         ad = new Advertisement();
@@ -30,13 +31,19 @@ public class HandleAddAdvertisement implements ActionListener {
                 try{
                     File dir=fileDialog.getCurrentDirectory();
                     String name=fileDialog.getSelectedFile().getName();
-                    File file=new File(dir,name);
+                    file=new File(dir,name);
                     ad.setPictureFile(file);
                 }
                 catch(Exception exp){}
             }
         }
         if(e.getSource()==view.submit) {
+            //对图片文件进行判断，如果为空提示选择图片
+            if(file==null){
+                JOptionPane.showMessageDialog
+                        (null,"请选择图片","消息对话框", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
             String number = view.inputSerialNumber.getText();
             String content = view.inputWord.getText();
             ad.setContent(content);
