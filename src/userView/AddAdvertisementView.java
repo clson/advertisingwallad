@@ -1,9 +1,11 @@
 package userView;
 
 import model.LoginResp;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.UUID;
 
 public class AddAdvertisementView extends JPanel {
     public LoginResp loginResp;
@@ -33,6 +35,10 @@ public class AddAdvertisementView extends JPanel {
         inputWord.setFont(new Font("宋体",Font.BOLD,20));
         inputPictureFile = new JButton("请选择广告图像文件");
         submit = new JButton("添加广告");
+        //随机生成广告序列号
+        //inputSerialNumber.setText(RandomStringUtils.random(5, RandomStringUtils.randomNumeric(5)));
+        //inputSerialNumber.setText(UUID.randomUUID().toString().substring(0, 5));
+        //inputSerialNumber.setEditable(false);
         pNorth.add(new JLabel("输入广告序列号"));
         pNorth.add(inputSerialNumber);
         pNorth.add(new JLabel("在文本区输入广告词"));

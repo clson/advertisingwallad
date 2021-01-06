@@ -53,7 +53,7 @@ public class RegisterView extends JPanel implements ActionListener {
         }
         else {
             JOptionPane.showMessageDialog
-                    (null,"两次输入密码不同","消息对话框", JOptionPane.WARNING_MESSAGE);
+                    (null,"两次输入密码不一致","消息对话框", JOptionPane.WARNING_MESSAGE);
         }
     }
 }

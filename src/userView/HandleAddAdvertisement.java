@@ -2,11 +2,14 @@ package userView;
 
 import control.AddAdvertisement;
 import model.Advertisement;
+import org.apache.commons.lang3.RandomStringUtils;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.Random;
+import java.util.UUID;
 
 public class HandleAddAdvertisement implements ActionListener {
     AddAdvertisementView view ;

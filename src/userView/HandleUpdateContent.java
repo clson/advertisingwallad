@@ -46,6 +46,10 @@ public class HandleUpdateContent implements ActionListener {
             }else {
                 view.hintMess.setText("修改失败，请确保自己有该条广告");
             }
+            //提交之后清空输入框及图片文件
+            view.inputSerialNumber.setText("");
+            view.inputWord.setText("");
+            file=null;
         }
 
     }

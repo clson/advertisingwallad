@@ -4,6 +4,7 @@ import control.HandleLogin;
 import model.LoginResp;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,6 +31,10 @@ public class LoginView extends JPanel implements ActionListener {
         buttonExit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 loginResp.setLoginSuccess(false);
+                JOptionPane.showMessageDialog
+                        (null,"您的账号已退出","消息对话成功框", JOptionPane.WARNING_MESSAGE);
+                inputID.setText("");
+                inputPassword.setText("");
             }});
         buttonLogin.addActionListener(this);
     }
@@ -45,7 +50,7 @@ public class LoginView extends JPanel implements ActionListener {
         }
         else {
             JOptionPane.showMessageDialog
-                    (null,"登录失败","消息对话成功框", JOptionPane.WARNING_MESSAGE);
+                    (null,"登录失败，账号或密码错误","消息对话成功框", JOptionPane.WARNING_MESSAGE);
         }
     }
 }

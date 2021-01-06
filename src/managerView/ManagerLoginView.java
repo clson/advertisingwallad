@@ -30,6 +30,10 @@ public class ManagerLoginView  extends JPanel implements ActionListener {
         buttonExit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 manager.setLoginSuccess(false);
+                JOptionPane.showMessageDialog
+                        (null,"您的账号已退出","消息对话成功框", JOptionPane.WARNING_MESSAGE);
+                inputID.setText("");
+                inputPassword.setText("");
             }});
         buttonLogin.addActionListener(this);
     }

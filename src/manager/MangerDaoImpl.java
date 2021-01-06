@@ -136,7 +136,7 @@ public class MangerDaoImpl implements ManagerDao {
                 success=true;
             else
                 success=false;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }

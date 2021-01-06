@@ -34,7 +34,7 @@ public class ManagerIntegrationView extends JFrame{
         tabbedPane.add("删除广告",deleteAdvertisementView);
         tabbedPane.validate();
         add(tabbedPane, BorderLayout.CENTER);
-        setBounds(400,250,700,500);
+        setBounds(520,300,700,500);
         validate();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
